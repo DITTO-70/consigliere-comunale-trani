@@ -1,0 +1,1298 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mattia Di Tondo – Con Marinaro Sindaco per Trani</title>
+  <meta name="description" content="Mattia Di Tondo, candidato Consigliere Comunale a Trani con la lista Marinaro Sindaco. 20 anni, sviluppatore, tranese. Elezioni 24-25 Maggio 2026." />
+  <meta property="og:title" content="Mattia Di Tondo – Con Marinaro Sindaco per Trani" />
+  <meta property="og:description" content="Il più giovane della lista. Competenze digitali concrete per Trani." />
+  <meta property="og:image" content="Foto_Mie/WhatsApp Image 2026-04-20 at 13.52.28.jpeg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ── RESET & BASE ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --yellow: #FFD700;
+      --yellow-dark: #F0C800;
+      --black: #0A0A0A;
+      --white: #FFFFFF;
+      --gray-light: #F5F5F5;
+      --gray-mid: #E0E0E0;
+      --text-muted: #555;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--white);
+      color: var(--black);
+      overflow-x: hidden;
+    }
+
+    /* ── NAVBAR ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(10,10,10,0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 3px solid var(--yellow);
+      padding: 0 2rem;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.4rem;
+      color: var(--yellow);
+      letter-spacing: 2px;
+      text-decoration: none;
+    }
+    .nav-logo span { color: var(--white); }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--white);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--yellow); }
+    .nav-cta {
+      background: var(--yellow);
+      color: var(--black) !important;
+      padding: 0.4rem 1rem;
+      border-radius: 4px;
+      font-weight: 700 !important;
+    }
+    .nav-cta:hover { background: var(--yellow-dark) !important; color: var(--black) !important; }
+
+    /* hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 8px 4px;
+      min-width: 44px;
+      min-height: 44px;
+      align-items: center;
+      justify-content: center;
+    }
+    .hamburger span {
+      display: block;
+      width: 26px;
+      height: 2px;
+      background: var(--white);
+      transition: all 0.3s;
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 64px; left: 0; right: 0;
+      background: var(--black);
+      border-bottom: 3px solid var(--yellow);
+      padding: 1.5rem 1.5rem;
+      z-index: 999;
+      flex-direction: column;
+      gap: 0;
+    }
+    .mobile-menu a {
+      color: var(--white);
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 0.9rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      transition: color 0.2s, padding-left 0.2s;
+    }
+    .mobile-menu a:last-child { border-bottom: none; }
+    .mobile-menu a::before { content: '▸'; color: var(--yellow); font-size: 0.75rem; }
+    .mobile-menu a:hover { color: var(--yellow); padding-left: 0.4rem; }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      background: var(--yellow);
+      display: flex;
+      align-items: stretch;
+      position: relative;
+      overflow: hidden;
+      padding-top: 64px;
+    }
+    .hero-bg-pattern {
+      position: absolute;
+      inset: 0;
+      background-image:
+        repeating-linear-gradient(
+          -45deg,
+          transparent,
+          transparent 40px,
+          rgba(0,0,0,0.04) 40px,
+          rgba(0,0,0,0.04) 42px
+        );
+      pointer-events: none;
+    }
+    .hero-inner {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 2rem;
+    }
+    .hero-text {
+      padding-bottom: 0;
+      z-index: 2;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--black);
+      color: var(--yellow);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 0.4rem 0.9rem;
+      border-radius: 3px;
+      margin-bottom: 1.2rem;
+    }
+    .hero-badge .dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--yellow);
+      animation: pulse 1.5s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.8); }
+    }
+    .hero-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3.2rem, 7vw, 6.5rem);
+      line-height: 1;
+      color: var(--black);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 0.8rem;
+      white-space: nowrap;
+    }
+    .hero-name .first { font-size: inherit; letter-spacing: inherit; margin-right: 0.2rem; }
+    .hero-subtitle {
+      font-size: clamp(1rem, 2.5vw, 1.3rem);
+      font-weight: 700;
+      color: var(--black);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: 2rem;
+      border-left: 5px solid var(--black);
+      padding-left: 1rem;
+    }
+    .hero-date-badge {
+      display: inline-block;
+      background: var(--black);
+      color: var(--white);
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.1rem;
+      letter-spacing: 3px;
+      padding: 0.6rem 1.4rem;
+      margin-bottom: 2.5rem;
+    }
+    .hero-date-badge strong { color: var(--yellow); }
+    .hero-socials {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+    .hero-socials a {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--black);
+      color: var(--white);
+      text-decoration: none;
+      padding: 0.65rem 1.2rem;
+      border-radius: 5px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+      transition: all 0.2s;
+    }
+    .hero-socials a:hover { background: #333; transform: translateY(-2px); }
+    .hero-socials a svg { width: 18px; height: 18px; fill: var(--white); }
+    .hero-img {
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+      align-self: flex-end;
+      z-index: 2;
+      height: 100%;
+    }
+    .hero-img img {
+      width: min(440px, 90%);
+      border-radius: 8px;
+      object-fit: cover;
+      display: block;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+      border: 4px solid var(--white);
+    }
+
+    /* ── TICKER ── */
+    .ticker {
+      background: var(--black);
+      color: var(--yellow);
+      padding: 0.75rem 0;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    .ticker-inner {
+      display: inline-block;
+      animation: ticker 30s linear infinite;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.1rem;
+      letter-spacing: 3px;
+    }
+    .ticker-inner span { margin: 0 2.5rem; }
+    .ticker-inner .sep { color: var(--white); opacity: 0.4; }
+    @keyframes ticker {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* ── SECTIONS COMMON ── */
+    section { padding: 6rem 2rem; }
+    .container { max-width: 1100px; margin: 0 auto; }
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--yellow);
+      background: var(--black);
+      display: inline-block;
+      padding: 0.3rem 0.8rem;
+      margin-bottom: 1rem;
+    }
+    .section-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      line-height: 1;
+      letter-spacing: 2px;
+      margin-bottom: 1.5rem;
+    }
+    .divider {
+      width: 60px;
+      height: 5px;
+      background: var(--yellow);
+      margin-bottom: 2rem;
+    }
+
+    /* ── CHI SONO ── */
+    #chi-sono { background: var(--white); }
+    .chi-sono-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 5rem;
+      align-items: center;
+    }
+    .chi-sono-img-wrap {
+      position: relative;
+    }
+    .chi-sono-img-wrap::before {
+      content: '';
+      position: absolute;
+      top: 20px; left: -20px;
+      width: 100%; height: 100%;
+      background: var(--yellow);
+      z-index: 0;
+      border-radius: 4px;
+    }
+    .chi-sono-img-wrap img {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      border-radius: 4px;
+      display: block;
+      object-fit: cover;
+      object-position: top;
+      max-height: 520px;
+    }
+    .chi-sono-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .tag {
+      background: var(--yellow);
+      color: var(--black);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 0.3rem 0.7rem;
+      border-radius: 3px;
+    }
+    .chi-sono-text p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: #333;
+      margin-bottom: 1.2rem;
+    }
+    .chi-sono-text p strong { color: var(--black); }
+    .chi-sono-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin: 2rem 0;
+      border-top: 2px solid var(--gray-mid);
+      border-bottom: 2px solid var(--gray-mid);
+      padding: 1.5rem 0;
+    }
+    .stat { text-align: center; }
+    .stat-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.8rem;
+      color: var(--black);
+      line-height: 1;
+    }
+    .stat-num span { color: var(--yellow); font-size: 2rem; }
+    .stat-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-top: 0.3rem;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.85rem 1.8rem;
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.2s;
+      border: none;
+    }
+    .btn-primary {
+      background: var(--yellow);
+      color: var(--black);
+    }
+    .btn-primary:hover { background: var(--yellow-dark); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(255,215,0,0.4); }
+    .btn-outline {
+      background: transparent;
+      color: var(--black);
+      border: 2px solid var(--black);
+    }
+    .btn-outline:hover { background: var(--black); color: var(--white); }
+
+    /* ── PROGRAMMA ── */
+    #programma { background: var(--black); }
+    #programma .section-label { background: var(--yellow); color: var(--black); }
+    #programma .section-title { color: var(--white); }
+    #programma .divider { background: var(--yellow); }
+    #programma .section-intro {
+      color: rgba(255,255,255,0.7);
+      font-size: 1.05rem;
+      line-height: 1.8;
+      max-width: 650px;
+      margin-bottom: 3.5rem;
+    }
+    .pilastri-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .pilastro {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,215,0,0.15);
+      border-top: 4px solid var(--yellow);
+      padding: 2rem;
+      border-radius: 4px;
+      transition: all 0.3s;
+    }
+    .pilastro:hover {
+      background: rgba(255,215,0,0.06);
+      border-color: var(--yellow);
+      transform: translateY(-4px);
+    }
+    .pilastro-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 4rem;
+      color: rgba(255,215,0,0.15);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+    .pilastro-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--yellow);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.2rem;
+    }
+    .pilastro-icon svg { width: 24px; height: 24px; fill: var(--black); }
+    .pilastro h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.8rem;
+      color: var(--yellow);
+      letter-spacing: 2px;
+      margin-bottom: 0.3rem;
+    }
+    .pilastro .pilastro-sub {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.5);
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    .pilastro p {
+      color: rgba(255,255,255,0.75);
+      font-size: 0.95rem;
+      line-height: 1.8;
+    }
+    .pilastro ul {
+      list-style: none;
+      margin-top: 1rem;
+    }
+    .pilastro ul li {
+      color: rgba(255,255,255,0.7);
+      font-size: 0.9rem;
+      padding: 0.4rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+    }
+    .pilastro ul li::before {
+      content: '▸';
+      color: var(--yellow);
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* ── LISTA / COLLEGAMENTO ── */
+    #lista {
+      background: var(--yellow);
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    #lista .section-label { background: var(--black); color: var(--yellow); }
+    #lista p {
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      font-weight: 500;
+      line-height: 1.8;
+    }
+    .lista-logo-wrap {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 2rem;
+    }
+    .lista-logo-circle {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      border: 5px solid var(--black);
+      background: var(--white);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 1rem;
+    }
+    .lista-logo-circle .lista-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.1rem;
+      line-height: 1.1;
+      color: var(--black);
+    }
+    .lista-logo-circle .lista-per {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin: 0.2rem 0;
+    }
+    .lista-logo-circle .lista-city {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.3rem;
+      color: var(--black);
+      letter-spacing: 2px;
+    }
+
+    /* ── CONTATTI ── */
+    #contatti { background: var(--white); }
+    .contatti-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 5rem;
+      align-items: start;
+    }
+    .form-group {
+      margin-bottom: 1.2rem;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 0.4rem;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      border: 2px solid var(--gray-mid);
+      border-radius: 4px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      color: var(--black);
+      background: var(--white);
+      transition: border-color 0.2s;
+      outline: none;
+    }
+    input:focus, textarea:focus { border-color: var(--yellow); }
+    textarea { resize: vertical; min-height: 130px; }
+    .form-submit { margin-top: 0.5rem; }
+    .contatti-info { padding-top: 0.5rem; }
+    .contatti-info h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem;
+      letter-spacing: 2px;
+      margin-bottom: 1rem;
+    }
+    .contatti-info p {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: #444;
+      margin-bottom: 1.5rem;
+    }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-bottom: 1rem;
+    }
+    .contact-item a {
+      color: var(--black);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+    .contact-item a:hover { color: #c9a800; }
+    .contact-icon {
+      width: 42px; height: 42px;
+      background: var(--yellow);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .contact-icon svg { width: 18px; height: 18px; fill: var(--black); }
+    .voto-box {
+      background: var(--black);
+      color: var(--white);
+      padding: 1.8rem;
+      border-radius: 4px;
+      margin-top: 2rem;
+      text-align: center;
+      border-top: 4px solid var(--yellow);
+    }
+    .voto-box .voto-date {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem;
+      color: var(--yellow);
+      letter-spacing: 3px;
+      line-height: 1;
+    }
+    .voto-box .voto-label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      margin: 0.3rem 0 0.8rem;
+    }
+    .voto-box p {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.8);
+      line-height: 1.7;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--black);
+      color: rgba(255,255,255,0.5);
+      padding: 2.5rem 2rem;
+      text-align: center;
+      border-top: 3px solid var(--yellow);
+    }
+    .footer-inner { max-width: 1100px; margin: 0 auto; }
+    .footer-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.6rem;
+      color: var(--yellow);
+      letter-spacing: 3px;
+      margin-bottom: 0.5rem;
+    }
+    footer p { font-size: 0.82rem; line-height: 1.8; }
+    .footer-links { display: flex; justify-content: center; gap: 2rem; margin: 1rem 0; }
+    .footer-links a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.82rem; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--yellow); }
+
+    /* ── NOTIFICATION ── */
+    #form-notify {
+      display: none;
+      background: #e8f5e9;
+      border-left: 4px solid #4caf50;
+      padding: 1rem 1.2rem;
+      border-radius: 4px;
+      margin-top: 1rem;
+      font-weight: 600;
+      color: #2e7d32;
+    }
+
+    /* ── SCROLL TOP ── */
+    .scroll-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      width: 46px; height: 46px;
+      background: var(--yellow);
+      color: var(--black);
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 15px rgba(255,215,0,0.5);
+      z-index: 500;
+      transition: transform 0.2s;
+    }
+    .scroll-top:hover { transform: translateY(-3px); }
+    .scroll-top svg { width: 20px; height: 20px; fill: var(--black); }
+    .scroll-top.visible { display: flex; }
+
+    /* ── RESPONSIVE ── */
+
+    /* === TABLET (≤ 900px) === */
+    @media (max-width: 900px) {
+      /* Nav */
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+
+      /* Mobile menu — animazione */
+      .mobile-menu {
+        display: flex;
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-10px);
+        transition: opacity 0.25s ease, transform 0.25s ease;
+      }
+      .mobile-menu.open {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+      }
+
+      /* Hero */
+      #hero { min-height: auto; padding-bottom: 2rem; }
+      .hero-inner {
+        grid-template-columns: 1fr;
+        padding: 1.5rem 0 0;
+        gap: 2rem;
+      }
+      .hero-name { white-space: normal; }
+      .hero-text { padding-bottom: 0; }
+      .hero-img { justify-content: center; align-self: auto; }
+      .hero-img img { width: min(380px, 88%); }
+      .hero-socials { flex-wrap: wrap; }
+
+      /* Chi sono */
+      .chi-sono-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .chi-sono-img-wrap::before { display: none; }
+      .chi-sono-img-wrap img { max-height: 400px; }
+
+      /* Programma */
+      .pilastri-grid { grid-template-columns: 1fr; }
+
+      /* Contatti */
+      .contatti-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+
+    /* === MOBILE (≤ 620px) === */
+    @media (max-width: 620px) {
+      /* Nav */
+      nav { padding: 0 1rem; height: 60px; }
+      .nav-logo { font-size: 1.2rem; letter-spacing: 1px; }
+      .mobile-menu { top: 60px; }
+
+      /* Sections */
+      section { padding: 3.5rem 1.2rem; }
+      #lista { padding: 3rem 1.2rem; }
+      #hero { padding-top: 60px; }
+      .hero-inner { padding: 1.5rem 0 0; }
+
+      /* Hero */
+      .hero-badge {
+        font-size: 0.65rem;
+        letter-spacing: 1px;
+        flex-wrap: wrap;
+      }
+      .hero-name {
+        font-size: clamp(2.8rem, 11vw, 4.5rem);
+        letter-spacing: 1px;
+      }
+      .hero-subtitle {
+        font-size: 0.85rem;
+        letter-spacing: 2px;
+      }
+      .hero-date-badge {
+        font-size: 0.9rem;
+        letter-spacing: 2px;
+        padding: 0.5rem 1rem;
+        margin-bottom: 1.8rem;
+      }
+      .hero-socials { gap: 0.6rem; }
+      .hero-socials a { padding: 0.65rem 1.1rem; font-size: 0.82rem; }
+      .hero-img img { width: min(310px, 88%); }
+
+      /* Section titoli */
+      .section-title { font-size: clamp(2rem, 9vw, 3rem); }
+
+      /* Chi sono */
+      .chi-sono-text p { font-size: 0.95rem; }
+      .chi-sono-stats {
+        grid-template-columns: repeat(3, 1fr);
+        padding: 1.2rem 0;
+        gap: 0.5rem;
+      }
+      .stat-num { font-size: 2.2rem; }
+      .stat-num span { font-size: 1.5rem; }
+      .stat-label { font-size: 0.65rem; letter-spacing: 0.5px; }
+      .chi-sono-tags { gap: 0.4rem; }
+      .tag { font-size: 0.7rem; padding: 0.25rem 0.6rem; }
+
+      /* Pilastri */
+      .pilastro { padding: 1.5rem; }
+      .pilastro h3 { font-size: 1.5rem; }
+      .pilastro-num { font-size: 3rem; }
+      .pilastro p { font-size: 0.9rem; }
+      .pilastro ul li { font-size: 0.85rem; }
+
+      /* Lista */
+      #lista p { font-size: 0.95rem; }
+      .lista-logo-circle { width: 120px; height: 120px; }
+      .lista-logo-circle .lista-name { font-size: 1rem; }
+      .lista-logo-circle .lista-city { font-size: 1.1rem; }
+
+      /* Contatti */
+      .contatti-info h3 { font-size: 1.6rem; }
+      .contact-icon { width: 38px; height: 38px; }
+      .contact-icon svg { width: 16px; height: 16px; }
+      .contact-item a { font-size: 0.88rem; }
+      .voto-box { padding: 1.4rem; margin-top: 1.5rem; }
+      .voto-box .voto-date { font-size: 1.6rem; letter-spacing: 2px; }
+      .voto-box p { font-size: 0.9rem; }
+
+      /* Footer */
+      .footer-links {
+        flex-wrap: wrap;
+        gap: 0.6rem 1.2rem;
+        justify-content: center;
+      }
+      footer p { font-size: 0.78rem; }
+
+      /* Scroll top */
+      .scroll-top { bottom: 1.2rem; right: 1.2rem; width: 42px; height: 42px; }
+      .scroll-top svg { width: 18px; height: 18px; }
+
+      /* Pulsanti */
+      .btn { padding: 0.8rem 1.4rem; font-size: 0.85rem; }
+    }
+
+    /* === SMARTPHONE PICCOLO (≤ 390px) === */
+    @media (max-width: 390px) {
+      section { padding: 3rem 1rem; }
+      #lista { padding: 2.5rem 1rem; }
+
+      .hero-name { font-size: clamp(2.4rem, 13vw, 3.5rem); }
+      .hero-subtitle { font-size: 0.75rem; letter-spacing: 1.5px; }
+      .hero-socials { flex-direction: column; align-items: flex-start; }
+      .hero-socials a { width: 100%; justify-content: center; }
+
+      .chi-sono-stats { grid-template-columns: 1fr 1fr; }
+      .chi-sono-stats .stat:last-child { grid-column: 1 / -1; }
+
+      .pilastro { padding: 1.2rem; }
+      .pilastro-icon { width: 40px; height: 40px; }
+      .pilastro-icon svg { width: 20px; height: 20px; }
+
+      .voto-box .voto-date { font-size: 1.4rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════ NAVBAR ═══════════════════════════════ -->
+  <nav>
+    <a class="nav-logo" href="#hero">MATTIA <span>DI TONDO</span></a>
+    <ul class="nav-links">
+      <li><a href="#chi-sono">Chi sono</a></li>
+      <li><a href="#programma">Programma</a></li>
+      <li><a href="#contatti" class="nav-cta">Sostienimi</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#chi-sono" onclick="closeMobile()">Chi sono</a>
+    <a href="#programma" onclick="closeMobile()">Programma</a>
+    <a href="#contatti" onclick="closeMobile()" style="color:var(--yellow);font-weight:800;">Sostienimi</a>
+  </div>
+
+  <!-- ═══════════════════════════════ HERO ═══════════════════════════════ -->
+  <section id="hero">
+    <div class="hero-bg-pattern"></div>
+    <div class="hero-inner">
+      <div class="hero-text">
+        <div class="hero-badge">
+          <span class="dot"></span>
+          Candidato Consigliere Comunale · Trani
+        </div>
+        <h1 class="hero-name">
+          <span class="first">MATTIA</span> DI TONDO
+        </h1>
+        <p class="hero-subtitle">Con Marinaro Sindaco per Trani</p>
+        <div class="hero-date-badge">
+          <strong>24-25 MAGGIO 2026</strong> · ELEZIONI AMMINISTRATIVE
+        </div>
+        <div class="hero-socials">
+          <!-- Instagram -->
+          <a href="https://www.instagram.com/mattia_ditondo_/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+            Instagram
+          </a>
+          <!-- Facebook -->
+          <a href="https://www.facebook.com/mattia.d.tondo/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+            Facebook
+          </a>
+        </div>
+      </div>
+      <div class="hero-img">
+        <img src="Foto_Mie/WhatsApp Image 2026-04-20 at 13.52.28.jpeg" alt="Mattia Di Tondo - Parte Iniziale" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ TICKER ═══════════════════════════════ -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-inner">
+      <span>MATTIA DI TONDO</span>
+      <span class="sep">✦</span>
+      <span>CON MARINARO SINDACO PER TRANI</span>
+      <span class="sep">✦</span>
+      <span>24-25 MAGGIO 2026</span>
+      <span class="sep">✦</span>
+      <span>TRANI DIGITALE</span>
+      <span class="sep">✦</span>
+      <span>OPPORTUNITÀ PER I GIOVANI</span>
+      <span class="sep">✦</span>
+      <span>SUPPORTO ALLE ATTIVITÀ LOCALI</span>
+      <span class="sep">✦</span>
+      <span>ELEZIONI AMMINISTRATIVE TRANI</span>
+      <span class="sep">✦</span>
+      <span>MATTIA DI TONDO</span>
+      <span class="sep">✦</span>
+      <span>CON MARINARO SINDACO PER TRANI</span>
+      <span class="sep">✦</span>
+      <span>24-25 MAGGIO 2026</span>
+      <span class="sep">✦</span>
+      <span>TRANI DIGITALE</span>
+      <span class="sep">✦</span>
+      <span>OPPORTUNITÀ PER I GIOVANI</span>
+      <span class="sep">✦</span>
+      <span>SUPPORTO ALLE ATTIVITÀ LOCALI</span>
+      <span class="sep">✦</span>
+      <span>ELEZIONI AMMINISTRATIVE TRANI</span>
+      <span class="sep">✦</span>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════ CHI SONO ═══════════════════════════════ -->
+  <section id="chi-sono">
+    <div class="container">
+      <div class="chi-sono-grid">
+        <div class="chi-sono-img-wrap">
+          <img src="Foto_Mie/WhatsApp Image 2026-04-20 at 15.04.33.jpeg" alt="Mattia Di Tondo" />
+        </div>
+        <div class="chi-sono-text">
+          <span class="section-label">Chi sono</span>
+          <h2 class="section-title">Tranese. Digitale. Concreto.</h2>
+          <div class="divider"></div>
+
+          <div class="chi-sono-tags">
+            <span class="tag">20 anni</span>
+            <span class="tag">Trani</span>
+            <span class="tag">Sviluppatore</span>
+            <span class="tag">Studente Uniba</span>
+            <span class="tag">Il più giovane</span>
+          </div>
+
+          <p>
+            Mi chiamo <strong>Mattia Di Tondo</strong>, ho 20 anni e sono un tranese doc. Sono cresciuto in questa città, l'ho vissuta e la conosco, nei suoi pregi, nei suoi difetti e soprattutto in ciò in cui può migliorare.
+          </p>
+          <p>
+            Sono uno <strong>sviluppatore freelance</strong>: ho già realizzato siti vetrina, e-commerce, landing page e sistemi di prenotazione per attività commerciali qui a Trani e dintorni. So integrare intelligenza artificiale, creare automazioni, chatbot e app mobile. Non parlo di digitale sui libri: lo faccio ogni giorno, per lavoro, per passione.
+          </p>
+          <p>
+            Studio <strong>Informatica all'Università di Bari</strong> (ITPS) e mi sono diplomato al Liceo Classico "F. De Sanctis" di Trani. Ho lavorato anche nella ristorazione, a contatto diretto con le persone e con il ritmo della città.
+          </p>
+          <p>
+            Mi candido perché voglio portare <strong>competenze digitali concrete</strong> nel consiglio comunale. Non formule vuote: strumenti reali per rendere Trani più efficiente, più moderna e più vicina ai suoi cittadini.
+          </p>
+
+          <div class="chi-sono-stats">
+            <div class="stat">
+              <div class="stat-num">20<span>+</span></div>
+              <div class="stat-label">Anni<br>di vita a Trani</div>
+            </div>
+            <div class="stat">
+              <div class="stat-num">10<span>+</span></div>
+              <div class="stat-label">Progetti<br>realizzati</div>
+            </div>
+            <div class="stat">
+              <div class="stat-num">1<span>°</span></div>
+              <div class="stat-label">Il più giovane<br>della lista</div>
+            </div>
+          </div>
+
+          <a href="curriculum/CURRICULUM (2).pdf" class="btn btn-primary" download>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 16l-5-5 1.4-1.4 2.6 2.6V4h2v8.2l2.6-2.6L17 11l-5 5zm-6 2h12v2H6v-2z"/>
+            </svg>
+            Scarica il mio Curriculum
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ PROGRAMMA ═══════════════════════════════ -->
+  <section id="programma">
+    <div class="container">
+      <span class="section-label">Il mio impegno</span>
+      <h2 class="section-title" style="color:var(--white)">TRE PILASTRI CONCRETI</h2>
+      <div class="divider"></div>
+      <p class="section-intro">
+        Non promesse. Fatti. Questi sono i tre ambiti su cui voglio lavorare ogni giorno come consigliere comunale, partendo da competenze che ho già e da una conoscenza diretta del territorio.
+      </p>
+
+      <div class="pilastri-grid">
+
+        <!-- PILASTRO 1 -->
+        <div class="pilastro">
+          <div class="pilastro-num">01</div>
+          <div class="pilastro-icon">
+            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-5 14H4v-4h11v4zm0-5H4V9h11v4zm5 5h-4V9h4v9z"/></svg>
+          </div>
+          <h3>Trani Digitale</h3>
+          <p class="pilastro-sub">Servizi online · App · Efficienza</p>
+          <p>
+            Oggi per rinnovare un documento, prenotare uno sportello o consultare un atto bisogna perdere mezza giornata. Non ha senso, nel 2026. Voglio portare la pubblica amministrazione online, con strumenti che funzionano davvero.
+          </p>
+          <ul>
+            <li>Sportelli comunali accessibili da casa, 24 ore su 24</li>
+            <li>Prenotazioni digitali per tutti i servizi pubblici</li>
+            <li>Un'app per i cittadini: notizie, segnalazioni, servizi</li>
+            <li>Digitalizzazione degli archivi comunali</li>
+          </ul>
+        </div>
+
+        <!-- PILASTRO 2 -->
+        <div class="pilastro">
+          <div class="pilastro-num">02</div>
+          <div class="pilastro-icon">
+            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V6h16v12zM6 10h2v2H6zm0 4h8v2H6zm10 0h2v2h-2zm0-4h2v2h-2zm-6 0h4v2h-4z"/></svg>
+          </div>
+          <h3>Attività Locali</h3>
+          <p class="pilastro-sub">Commercio · Visibilità · Crescita</p>
+          <p>
+            Ho lavorato con negozi, ristoranti e professionisti di Trani. So cosa serve davvero: presenza online, strumenti semplici, visibilità. Tanti imprenditori locali hanno potenziale ma non sanno come sfruttarlo digitalmente.
+          </p>
+          <ul>
+            <li>Sportello digitale gratuito per le PMI tranesi</li>
+            <li>Supporto per siti web, social e prenotazioni online</li>
+            <li>Promozione turistica digitale del territorio</li>
+            <li>Formazione pratica su strumenti digitali</li>
+          </ul>
+        </div>
+
+        <!-- PILASTRO 3 -->
+        <div class="pilastro">
+          <div class="pilastro-num">03</div>
+          <div class="pilastro-icon">
+            <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+          </div>
+          <h3>Opportunità Giovani</h3>
+          <p class="pilastro-sub">Lavoro · Università · Futuro</p>
+          <p>
+            Troppi giovani lasciano Trani perché non trovano opportunità. Io resto qui e voglio costruire qualcosa, connettendo il mondo universitario, le startup e le competenze tech con le reali esigenze del territorio.
+          </p>
+          <ul>
+            <li>Collegamento tra università e imprese locali</li>
+            <li>Spazio di coworking per freelance e studenti</li>
+            <li>Percorsi di formazione tech per under 30</li>
+            <li>Incentivi per chi avvia un'attività a Trani</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ LISTA ═══════════════════════════════ -->
+  <section id="lista">
+    <div class="container">
+      <span class="section-label">La lista</span>
+      <h2 class="section-title" style="margin-bottom:1rem">Con Marinaro Sindaco</h2>
+      <div class="lista-logo-wrap">
+        <img src="curriculum/image copy.png" alt="Logo Marinaro Sindaco" style="max-width: 220px; width: 100%; height: auto; object-fit: contain;" />
+      </div>
+      <p>
+        Faccio parte della lista <strong>Marinaro Sindaco per Trani</strong>, guidata da <strong>Giacomo Marinaro</strong>. Un progetto serio, radicato nel territorio, che vuole portare un cambiamento reale. Io rappresento la voce dei giovani, del digitale, del futuro di questa città.
+      </p>
+      <a href="https://www.marinarosindaco.it" class="btn btn-outline" target="_blank" rel="noopener">
+        Scopri la lista su marinarosindaco.it
+      </a>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ CONTATTI ═══════════════════════════════ -->
+  <section id="contatti">
+    <div class="container">
+      <div class="contatti-grid">
+
+        <!-- FORM -->
+        <div>
+          <span class="section-label">Contatti</span>
+          <h2 class="section-title">Scrivimi, sono qui.</h2>
+          <div class="divider"></div>
+          <p style="color:#555;line-height:1.8;margin-bottom:1.5rem;">
+            Hai una domanda, una proposta o vuoi semplicemente saperne di più? Scrivimi: rispondo personalmente.
+          </p>
+          <form id="contact-form" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" name="nome" placeholder="Mario" required />
+              </div>
+              <div class="form-group">
+                <label for="cognome">Cognome</label>
+                <input type="text" id="cognome" name="cognome" placeholder="Rossi" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="mario.rossi@email.com" required />
+            </div>
+            <div class="form-group">
+              <label for="messaggio">Messaggio</label>
+              <textarea id="messaggio" name="messaggio" placeholder="La tua proposta, domanda o semplicemente un saluto..." required></textarea>
+            </div>
+            <div class="form-submit">
+              <button type="submit" class="btn btn-primary">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+                </svg>
+                Invia messaggio
+              </button>
+            </div>
+            <div id="form-notify">Grazie! Il tuo messaggio è stato inviato. Ti rispondo presto.</div>
+          </form>
+        </div>
+
+        <!-- INFO -->
+        <div class="contatti-info">
+          <h3>Trovami anche qui</h3>
+          <p>
+            Seguimi sui social per aggiornamenti sulla campagna, sulle iniziative e sulla vita politica di Trani. Sono sempre raggiungibile.
+          </p>
+
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            </div>
+            <a href="mailto:mattia.2005.ditondo@gmail.com">mattia.2005.ditondo@gmail.com</a>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </div>
+            <a href="https://www.instagram.com/mattia_ditondo_/" target="_blank" rel="noopener">@mattia_ditondo_</a>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </div>
+            <a href="https://www.facebook.com/mattia.d.tondo/" target="_blank" rel="noopener">Mattia Di Tondo</a>
+          </div>
+
+          <div class="voto-box">
+            <div class="voto-date">24-25 MAGGIO 2026</div>
+            <div class="voto-label">Elezioni Amministrative · Trani</div>
+            <p>
+              Il tuo voto è il modo più concreto di dire che Trani merita di cambiare. Portami con te in quella cabina elettorale e portiamo insieme questa città nel futuro.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ FOOTER ═══════════════════════════════ -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">MATTIA DI TONDO</div>
+      <p>Candidato Consigliere Comunale · Lista Marinaro Sindaco per Trani</p>
+      <div class="footer-links">
+        <a href="https://www.instagram.com/mattia_ditondo_/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.facebook.com/mattia.d.tondo/" target="_blank" rel="noopener">Facebook</a>
+        <a href="mailto:mattia.2005.ditondo@gmail.com">Email</a>
+        <a href="https://www.marinarosindaco.it" target="_blank" rel="noopener">marinarosindaco.it</a>
+      </div>
+      <p>Materiale elettorale · Elezioni Amministrative Trani · 24-25 Maggio 2026</p>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════ SCROLL TOP ═══════════════════════════════ -->
+  <button class="scroll-top" id="scroll-top" aria-label="Torna su">
+    <svg viewBox="0 0 24 24"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>
+  </button>
+
+  <!-- ═══════════════════════════════ JS ═══════════════════════════════ -->
+  <script>
+    // Hamburger
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    hamburger.addEventListener('click', () => {
+      const isOpen = hamburger.classList.toggle('open');
+      mobileMenu.classList.toggle('open', isOpen);
+      hamburger.setAttribute('aria-expanded', isOpen);
+    });
+    function closeMobile() {
+      hamburger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+    }
+    document.addEventListener('click', (e) => {
+      if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
+        closeMobile();
+      }
+    });
+
+    // Scroll top
+    const scrollTopBtn = document.getElementById('scroll-top');
+    window.addEventListener('scroll', () => {
+      scrollTopBtn.classList.toggle('visible', window.scrollY > 400);
+    });
+    scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    // Navbar shadow on scroll
+    const nav = document.querySelector('nav');
+    window.addEventListener('scroll', () => {
+      nav.style.boxShadow = window.scrollY > 10 ? '0 2px 20px rgba(0,0,0,0.4)' : 'none';
+    });
+
+    // Contact form — simulazione invio (da collegare a backend o Formspree)
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const nome = document.getElementById('nome').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const messaggio = document.getElementById('messaggio').value.trim();
+      if (!nome || !email || !messaggio) return;
+      const notify = document.getElementById('form-notify');
+      notify.style.display = 'block';
+      this.reset();
+      setTimeout(() => { notify.style.display = 'none'; }, 6000);
+    });
+
+    // Animate elements on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.pilastro, .chi-sono-img-wrap').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(30px)';
+      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(el);
+    });
+  </script>
+
+</body>
+</html>
